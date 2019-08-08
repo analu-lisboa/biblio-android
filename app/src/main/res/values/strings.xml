@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Biblio</string>
+    <string name="button_label_enabled">Comprar Livros</string>
+    <string name="libraryEmpty">Sua Biblio está vazia!</string>
+    <string name="totalCredit">R$ 100,00</string>
+    <string name="saldo">SALDO:</string>
+    <string name="compra">Comprar</string>
+    <string name="bookTitle">Harry Potter</string>
+    <string name="fotoDeCapa">Capa do Livro</string>
+    <string name="tituloloja">Biblio</string>
+</resources>

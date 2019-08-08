@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+    <LinearLayout
+            android:orientation="vertical"
+            android:weightSum="10"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <RelativeLayout
+                android:layout_weight="10"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:background="@drawable/bg"
+                android:backgroundTint="#80FFFFFF"
+                android:backgroundTintMode="src_over">
+
+            <TextView
+                    android:id="@+id/tituloLoja"
+                    android:text="@string/tituloloja"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="50sp"
+                    android:textColor="@color/primaryDarkColor"
+                    android:layout_centerInParent="true"
+                    android:fontFamily="@font/kavoon"/>
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+                android:layout_weight="30"
+                android:layout_width="match_parent"
+                android:layout_height="450dp"
+
+        >
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center"
+            >
+
+                <TextView
+                        android:text="@string/libraryEmpty"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:id="@+id/textView"
+                        android:textSize="24sp"
+                        android:textAlignment="center"
+                        tools:layout_editor_absoluteY="122dp"
+                        tools:layout_editor_absoluteX="0dp"/>
+
+                <com.google.android.material.button.MaterialButton
+                        android:id="@+id/comprarLivros"
+                        style="@style/Widget.MaterialComponents.Button"
+                        android:layout_width="296dp"
+                        android:layout_height="60dp"
+                        android:textSize="16sp"
+                        android:text="@string/button_label_enabled"
+                />
+
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:background="@color/primaryDarkColor"
+        >
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="right">
+
+                <TextView
+                        android:text="@string/saldo"
+                        android:textColor="@color/primaryTextColor"
+                        android:textSize="18sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAlignment="center"
+                        android:layout_marginLeft="10dp"
+                        />
+                <TextView
+                        android:text="@string/totalCredit"
+                        android:textColor="@color/primaryTextColor"
+                        android:textSize="20sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/totalCredit"
+                        android:textAlignment="center"
+                        android:focusable="true"
+                        android:textStyle="bold"
+                        android:padding="5dp"/>
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>
