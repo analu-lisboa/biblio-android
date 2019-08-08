@@ -19,7 +19,7 @@ class LojaApi {
 
         }
 
-        fun getAllLivros(): Call<List<LivroResponse>>{
+        fun getAllLivros(): Call<MutableList<LivroResponse>>{
             return api.getAllLivros()
 
         }

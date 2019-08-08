@@ -9,14 +9,12 @@ import dev.analu.biblio.R
 import dev.analu.biblio.api.model.loja_response.LivroResponse
 import kotlinx.android.synthetic.main.item_card.view.*
 
-class LojaAdapter  (val homeFeed: List<LivroResponse>) : RecyclerView.Adapter<LojaAdapter.CustomViewHolder>() {
 
+class LojaAdapter  (val homeFeed: MutableList<LivroResponse>, val ClickListener: Mvp.btnClickListener): RecyclerView.Adapter<LojaAdapter.CustomViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): LojaAdapter.CustomViewHolder {
 
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_card, parent, false)
-
-
 
         return CustomViewHolder(view)
 
@@ -24,15 +22,17 @@ class LojaAdapter  (val homeFeed: List<LivroResponse>) : RecyclerView.Adapter<Lo
     }
 
     override fun onBindViewHolder(holder: CustomViewHolder, position: Int) {
-
         val homeFeed = homeFeed[position]
 
         with(holder.itemView){
             title.text = homeFeed.title
             writer.text = homeFeed.writer
-            price.text = ("R$ " + homeFeed.price.toString())
+            price.text = homeFeed.price.toString()
             val cover = thumbnailHd
             Picasso.get().load(homeFeed.thumbnailHd).into(cover)
+            btn_comprarLivro.setOnClickListener {
+                ClickListener.onBtnClick(position)
+            }
         }
     }
 
@@ -43,8 +43,8 @@ class LojaAdapter  (val homeFeed: List<LivroResponse>) : RecyclerView.Adapter<Lo
     }
 
     inner class CustomViewHolder(val view : View) : RecyclerView.ViewHolder(view) {
-    }
 
+    }
 }
 
 

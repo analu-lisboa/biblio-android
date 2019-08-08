@@ -8,5 +8,5 @@ interface ILojaApi {
 
 
     @GET("/Felcks/desafio-mobile-lemobs/master/products.json")
-    fun getAllLivros(): Call<List<LivroResponse>>
+    fun getAllLivros(): Call<MutableList<LivroResponse>>
 }

@@ -1,23 +1,27 @@
 package dev.analu.biblio.ui.Loja
 
-import dev.analu.biblio.domain.Livro
+import android.content.Context
+import dev.analu.biblio.api.model.loja_response.LivroResponse
+import io.reactivex.Observable
 
 
 interface Mvp {
+
     interface View{
-
+        fun showError (erro : String)
+        fun showLista(livros : MutableList<LivroResponse>)
+    }
+    interface  Presenter {
+        fun LoadBooks(context: Context)
     }
 
-
-    interface  presenter {
-        fun getAllLivros(livro: Livro)
-
+    interface Model{
+        fun getAllBooks() : Observable<MutableList<LivroResponse>>
+        fun getAllLivros()
     }
 
-
-    interface model{
-        fun getAllBooks()
+    interface btnClickListener {
+        fun onBtnClick(position: Int)
 
     }
-
 }

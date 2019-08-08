@@ -37,33 +37,44 @@
                 android:layout_weight="30"
                 android:layout_width="match_parent"
                 android:layout_height="450dp"
-
-        >
+                >
             <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical"
-                    android:gravity="center"
-            >
+                    android:gravity="center">
 
                 <TextView
                         android:text="@string/libraryEmpty"
                         android:layout_width="match_parent"
                         android:layout_height="40dp"
-                        android:id="@+id/textView"
+                        android:id="@+id/tv_bibliovazia"
                         android:textSize="24sp"
                         android:textAlignment="center"
                         tools:layout_editor_absoluteY="122dp"
-                        tools:layout_editor_absoluteX="0dp"/>
+                        tools:layout_editor_absoluteX="0dp"
+                        android:visibility="invisible"/>
+
+
 
                 <com.google.android.material.button.MaterialButton
-                        android:id="@+id/comprarLivros"
+                        android:id="@+id/btn_irLoja"
                         style="@style/Widget.MaterialComponents.Button"
                         android:layout_width="296dp"
                         android:layout_height="60dp"
                         android:textSize="16sp"
                         android:text="@string/button_label_enabled"
+                        android:visibility="visible"
                 />
+
+                <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyclerViewMain"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="gone">
+
+                </androidx.recyclerview.widget.RecyclerView>
+
 
 
             </LinearLayout>
@@ -98,7 +109,7 @@
                         android:textSize="20sp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/totalCredit"
+                        android:id="@+id/tv_saldo"
                         android:textAlignment="center"
                         android:focusable="true"
                         android:textStyle="bold"
